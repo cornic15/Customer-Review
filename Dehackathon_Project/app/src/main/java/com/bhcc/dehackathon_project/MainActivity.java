@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(MainActivity.this, cust_feedback, Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
-                    customerModel = new CustomerModel(-1, "error", "error", "error");
+                    customerModel = new CustomerModel(-1, "nan", "error", "error");
                     Toast.makeText(MainActivity.this, "Error Creating Customer", Toast.LENGTH_SHORT).show();
                 }
 
