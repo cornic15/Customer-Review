@@ -6,183 +6,230 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Were you served promptly?"
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity">
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_1" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup_age"
-            android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroup_2"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <RadioButton
+            android:id="@+id/rb_3"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            android:text="Yes" />
 
-            <RadioButton
-                android:id="@+id/rb_18_25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18-25" />
-
-            <RadioButton
-                android:id="@+id/rb_26_30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="26-30" />
-
-            <RadioButton
-                android:id="@+id/rb_31_40"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="31-40" />
-
-            <RadioButton
-                android:id="@+id/rb_41_50"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="41-50" />
-
-            <RadioButton
-                android:id="@+id/rb_51_60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="51-60" />
-
-            <RadioButton
-                android:id="@+id/rb_60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=">61" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rb_4"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="What is your age range?"
-            android:textColor="#151515"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/radioGroup_age"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="No" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_4"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <RadioButton
+            android:id="@+id/rb_7"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="How was our service today?"
-            android:textColor="#151515"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/radioGroup_service"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup_age" />
+            android:text="Yes" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rb_8"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tml_tell_us_more"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            android:text="No" />
 
-        <EditText
-            android:id="@+id/tml_tell_us_more"
-            android:layout_width="283dp"
-            android:layout_height="99dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Tell us more"
-            android:inputType="textMultiLine"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+    </RadioGroup>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Did you find our staff helpful and courteous? "
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_3"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <RadioButton
+            android:id="@+id/rb_5"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Rate your experience today"
-            android:textColor="#151515"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup_service" />
+            android:text="Yes" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup_service"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rb_6"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            android:text="No" />
 
-            <RadioButton
-                android:id="@+id/rb_terrible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TERRIBLE" />
+    </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/rb_fine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="FINE" />
+    <RadioGroup
+        android:id="@+id/radioGroup_1"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-            <RadioButton
-                android:id="@+id/rb_awesome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AWESOME" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rb_1"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="SAVE DATA"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/shareBtn"
-            app:layout_constraintTop_toBottomOf="@+id/tml_tell_us_more"
-            app:layout_constraintVertical_bias="0.418" />
+            android:text="Yes" />
 
-        <Button
-            android:id="@+id/shareBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:text="Share"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_save"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tml_tell_us_more"
-            app:layout_constraintVertical_bias="0.418" />
+        <RadioButton
+            android:id="@+id/rb_2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="No" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Are our products/services priced appropriately?"
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Would you recommend this business to a friend?"
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="How was your experience in the store?"
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_4" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/tml_tell_us_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/tml_tell_us_more"
+        android:layout_width="283dp"
+        android:layout_height="99dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Tell us more"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="SAVE DATA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/shareBtn"
+        app:layout_constraintTop_toBottomOf="@+id/tml_tell_us_more"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <Button
+        android:id="@+id/shareBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:text="Share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tml_tell_us_more"
+        app:layout_constraintVertical_bias="0.418" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
