@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String CUSTOMER_TABLE = "customerdata";
-    public static final String COLUMN_ID = "ID";
+    public static final String COLUMN_ID = "id";
     public static final String COLUMN_STAR_RATING = "[How was your experience in the store?]";
     public static final String COLUMN_QUESTION1 = "[Did you find our staff helpful and courteous?]";
     public static final String COLUMN_QUESTION2 = "[Were you served promptly?]";
