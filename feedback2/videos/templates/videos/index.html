@@ -1,0 +1,92 @@
+{% extends 'base.html' %} 
+{% load embed_video_tags %}
+{% load static %}
+
+
+{% block content %} 
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'static/style.css' %}">
+
+    <h1 class="mb-5">Videos</h1>
+
+    <div class="d-flex flex-wrap">
+        {% for item in videos %}
+
+            <div class="px-3 mb-5">
+                {% video item.url '426x240' %}
+                <div class="d-flex justify-content-start">
+                 {{ item.title }}
+                </div>
+            </div>
+            
+        {% endfor %}
+    </div>
+
+    <div class="testimonials">
+        <div class="inner">
+            <h1>Testimonials</h1>
+            <div class="border"></div>
+            <div class="row">
+               <div class="col">
+                    <div class="Testimonials">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+
+                <div class="col">
+                    <div class="Testimonials">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+
+                <div class="col">
+                    <div class="Testimonials">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="form">
+    <form>
+        First Name:<br>
+        <input type="text" name="firstname">
+        <br>
+        Last Name:<br>
+        <input type="text" name="lastname">
+        <br>
+        Company Name:<br>
+        <input type="text" name="companyname">
+        <br>
+        Company Email:<br>
+        <input type="text" name="companyemail">
+        <br>
+        <br>
+        <h5 >Message:</h5>
+
+<textarea id="message" name="message"
+          rows="10" cols="50">
+
+</textarea>
+
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+       </div>
+{% endblock %}

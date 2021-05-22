@@ -1,0 +1,18 @@
+{%block content%}
+{%for post in object_list%}
+<div class= 'post-entry'>
+    <h1>
+        hello
+    </h1>
+    <table>
+        <a href="">
+            {{post.name}}
+            {{post.body}}
+
+        </a>
+    </table>
+
+</div>
+
+{%endfor%}
+{%endblock content%}
