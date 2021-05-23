@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Dehackathon_Project</string>
+    <string name="app_name">Customer Review App</string>
+     <string name="thankyou">Thank you for your survey !</string>
+    <string name="Back">Back</string>
 </resources>
