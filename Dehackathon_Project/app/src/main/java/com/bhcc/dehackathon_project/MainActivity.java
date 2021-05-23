@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     cust_feedback = tell_us_more.getText().toString();
                     customerModel = new CustomerModel(-1, String.valueOf(ratingBar.getRating()), rb_question1.getText().toString(), rb_question2.getText().toString(),
                             rb_question3.getText().toString(), rb_question4.getText().toString(), cust_feedback);
-                    Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
                     customerModel = new CustomerModel(-1, "nan", "nan", "nan", "nan", "nan", "nan");
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
                 boolean success = dataBaseHelper.addOne(customerModel);
                 Toast.makeText(MainActivity.this, "Success: Data Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Thank you for your survey!", Toast.LENGTH_SHORT).show();
 
             }
         });
