@@ -77,9 +77,15 @@ public class MainActivity extends AppCompatActivity {
 
                 boolean success = dataBaseHelper.addOne(customerModel);
                 Toast.makeText(MainActivity.this, "Success: Data Saved", Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, "Thank you for your survey!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Thank you for your survey!", Toast.LENGTH_SHORT).show();
+                showThankyouScreen();
 
             }
         });
+    }
+    public void showThankyouScreen(){
+        Intent showScreen = new Intent(this,ThankyouScreen.class);
+        startActivity(showScreen);
+
     }
 }
