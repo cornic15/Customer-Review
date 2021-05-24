@@ -13,6 +13,7 @@ body,
 			margin: 0;
 			padding: 0;
 			height: 100%;
+            width: 100%;
 			background: #7abecc !important;
 		}
         .center {
@@ -25,32 +26,36 @@ body,
 #nav {
     list-style: none;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     width: 100%;
     text-align: center;
-    background-color:  #f1f1f1;
+    background-color: rgb(41, 86, 233);
     height:38px;
+    font-size: large;
+
+  
 }
 
 #nav ul {
     list-style-type: none;
     margin: 0px;
-    padding: 0;
+   
     width: 100%;
 }
 
 #nav li {
     margin: 0px;
+
 }
 
 #nav li a {
-    padding: 10px;
+    padding: 20px;
     text-decoration: none;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #434343;
     float: left;
-    
+
 }
 
 a {
@@ -80,7 +85,7 @@ a {
 
 .form{
     padding: 40px 0;
-    background: #A9A9A9;
+    background:#dcdcdc;
     color: #434343;
     text-align: center;
 
@@ -122,22 +127,38 @@ a {
     text-transform: uppercase;
     margin: 20px 0;
 }
+
+.sign-up{
+    background-color: rgb(41, 86, 233);
+   
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    color: #fff;
+    padding: 40px 0;
+
+}
+
+.sign-up-btn{
+    width:50%;
+}
+
 </style>
 
 
 <link rel="stylesheet" type="text/css" href="{% static 'static/style.css' %}">
-
-    <div id="nav">
+<head>
+    <div id = "nav">
         <a class="active" href="#home">Home</a>
         <a href="/login">Login</a>
         <a href="/register">Register</a>
       </div>
-  
-
-    <div class="d-flex flex-wrap">
+    </head>
+    <div class="col-10 mx-auto mt-5 text-center">
+    <div class="d-flex flex-wrap form">
         {% for item in videos %}
 
-            <div class="px-3 mb-5 center">
+            <div class="center">
                 {% video item.url '560x340' %}
                 <div class="d-flex justify-content-start">
                
@@ -214,10 +235,15 @@ a {
       </form>
        </div>
 
-       <div class = "intro">
+     
+    <div class = "sign-up">
+        <h1>Increase Customer Feedback With QR-Customer</h1>
+        <button class= "btn btn-success center sign-up-btn" href="/register">Get Started Today</button>
+    </div>
+    <div class = "intro">
    
        
         <img src="{% static '/video/images/Cover.jpg' %}"/>
     </div>
-    
+    </div>
 {% endblock %}
