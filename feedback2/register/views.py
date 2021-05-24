@@ -9,8 +9,9 @@ def register(response):
           if form.is_valid():
               form.save()
 
-          return redirect("")
+          return redirect("/review")
     else:
-         form = RegisterForm()
+       
+        form = RegisterForm()
 
     return render(response, "register/register.html", {"form":form})

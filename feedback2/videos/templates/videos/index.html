@@ -2,22 +2,145 @@
 {% load embed_video_tags %}
 {% load static %}
 
-
 {% block content %} 
 
 
 
+<style>
+/* Add a black background color to the top navigation */
+body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #7abecc !important;
+		}
+        .center {
+            display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color:  #f1f1f1;
+    height:38px;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+}
+
+#nav li a {
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+    
+}
+
+a {
+  color: #35af3b;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.testimonials{
+    padding: 40px 0;
+    background: #f1f1f1;
+    color: #434343;
+    text-align: center;
+
+
+}
+
+.form{
+    padding: 40px 0;
+    background: #A9A9A9;
+    color: #434343;
+    text-align: center;
+
+}
+
+
+.inner{
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.border{
+    width: 160px;
+    height: 5px;
+    background: #6ab04c;
+    margin: 26px auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col{
+    flex: 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+}
+
+.testimonial{
+    background: #fff;
+    padding: 30px;
+}
+.name{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+</style>
+
+
 <link rel="stylesheet" type="text/css" href="{% static 'static/style.css' %}">
 
-    <h1 class="mb-5">Videos</h1>
+    <div id="nav">
+        <a class="active" href="#home">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      </div>
+  
 
     <div class="d-flex flex-wrap">
         {% for item in videos %}
 
-            <div class="px-3 mb-5">
-                {% video item.url '426x240' %}
+            <div class="px-3 mb-5 center">
+                {% video item.url '560x340' %}
                 <div class="d-flex justify-content-start">
-                 {{ item.title }}
+               
                 </div>
             </div>
             
@@ -30,7 +153,7 @@
             <div class="border"></div>
             <div class="row">
                <div class="col">
-                    <div class="Testimonials">
+                    <div class="testimonial">
                         <div class="name">Full name</div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
@@ -40,7 +163,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="Testimonials">
+                    <div class="testimonial">
                         <div class="name">Full name</div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
@@ -50,7 +173,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="Testimonials">
+                    <div class="testimonial">
                         <div class="name">Full name</div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
@@ -64,6 +187,7 @@
 
     </div>
     <div class="form">
+        <h1>Contact Us</h1>
     <form>
         First Name:<br>
         <input type="text" name="firstname">
@@ -89,4 +213,11 @@
         <input type="submit" value="Submit">
       </form>
        </div>
+
+       <div class = "intro">
+   
+       
+        <img src="{% static '/video/images/Cover.jpg' %}"/>
+    </div>
+    
 {% endblock %}

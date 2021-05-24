@@ -5,11 +5,49 @@ Login Here
 {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
+
+<style>
+    body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #7abecc !important;
+		}
+    	#form-group {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-top: auto;
+ 
+}
+
+.card{
+	background: #f1f1f1;
+    color: #434343;
+	max-width: 80%;
+	height: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+	margin-top: 5%;
+}
+
+	</style>
+</style>
 <form method="post" class="form-group">
     {% csrf_token %}
-    {{form|crispy}}
-    <button type="submit" class= "btn btn-success">Login</button>
+    <div class = "card">
+    <table class = "center">{{ form.as_table }}</table>
+    <button type="submit" class= "btn btn-success center">Login</button>
     <p>Don't have an account? Create one <a href="/register">here</a></p>
     </form>
-
+</div>
     {% endblock %}

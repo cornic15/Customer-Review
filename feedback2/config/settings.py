@@ -126,7 +126,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'uni_form'
 LOGIN_REDIRECT_URL = "/review"
+import os
+MEDIA_URL ='/images/'
 STATICFILES_DIRS = [
-   "\feedback2\videos\static",
-
+    os.path.join(BASE_DIR, 'static')
 ]
+
