@@ -39,15 +39,18 @@ Login Here
     padding: 0 20px;
 	margin-top: 5%;
 }
+.table-login{
+	margin-top: 2%;
 
+}
 	</style>
 </style>
 <form method="post" class="form-group">
     {% csrf_token %}
     <div class = "card">
-    <table class = "center">{{ form.as_table }}</table>
+    <table class = "center table-login">{{ form.as_table }}</table>
     <button type="submit" class= "btn btn-success center">Login</button>
-    <p>Don't have an account? Create one <a href="/register">here</a></p>
+    <p class = "center">Don't have an account? Create one <a href="/register">here</a></p>
     </form>
 </div>
     {% endblock %}
