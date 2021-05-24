@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from register import views as v
+from videos import views as view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('review/', include('review.urls')),
-    path('', include('videos.urls')),
+    path('', include('videos.urls'), name = 'home'),
+     path('', view.index, name='index'),
     path('register/',v.register, name = "register"),
     path('', include("django.contrib.auth.urls")),
 ]

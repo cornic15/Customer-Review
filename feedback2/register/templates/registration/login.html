@@ -12,7 +12,7 @@ Login Here
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #7abecc !important;
+			background: #e0ffff  !important;
 		}
     	#form-group {
   width: 100%;
@@ -39,18 +39,76 @@ Login Here
     padding: 0 20px;
 	margin-top: 5%;
 }
+
+
 .table-login{
 	margin-top: 2%;
 
 }
-	</style>
+
+
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color:#004343;
+    height:38px;
+    font-size: large;
+
+  
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+   
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+
+}
+
+#nav li a {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+
+}
+
+a {
+  color: #ccffff;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+
+
 </style>
+<div id = "nav">
+  <a href="{% url 'index' %}">Home</a>
+  <a class="active" href="#Login">Login</a>
+
+  <a href="/register">Register</a>
+</div>
+
 <form method="post" class="form-group">
     {% csrf_token %}
     <div class = "card">
     <table class = "center table-login">{{ form.as_table }}</table>
     <button type="submit" class= "btn btn-success center">Login</button>
-    <p class = "center">Don't have an account? Create one <a href="/register">here</a></p>
+   
     </form>
+    <p class = "center">Don't have an account? Create one <a href="/register">here</a></p>
+ 
 </div>
     {% endblock %}
