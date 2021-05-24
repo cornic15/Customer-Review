@@ -126,6 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'uni_form'
 LOGIN_REDIRECT_URL = "/review"
+LOGOUT_REDIRECT_URL = "/"
 import os
 MEDIA_URL ='/images/'
 STATICFILES_DIRS = [
