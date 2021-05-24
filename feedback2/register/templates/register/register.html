@@ -77,21 +77,28 @@
   margin-top: auto;
  
 
-   
-
 }
+
+.login {
+    margin:0 auto;
+    display:block;
+	margin-top: 10%;
+}
+	
 
 .card{
 	background: #f1f1f1;
     color: #434343;
 	max-width: 1000px;
-	height: 80%;
+	height: 75%;
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
 	margin-top: 5%;
 }
-
+.table-login{
+	margin-top: 2%;
+}
 	</style>
 
 
@@ -102,8 +109,8 @@
 	<div class="card">
   <form method="post" >
     {% csrf_token %}
-    <table class = "center">{{ form.as_table }}</table>
-    <button type="submit" class = "center" >Sign in</button>
+    <table class = "center table-login">{{ form.as_table }}</table>
+	<button type="submit" class = "login btn-success" >Sign In</button>
   </form>
 </div>
 {% endblock %}
