@@ -92,6 +92,11 @@
 
 }
 
+.submit-btn{
+  position: relative;
+  left: 30px;
+
+}
 
 </style>
 <div id = "nav">
@@ -105,7 +110,7 @@
     {% csrf_token %}
     <div class = "card">
     <table class = "center table-login">{{ form.as_table }}</table>
-    <button type="submit" class= "btn btn-success center">Login</button>
+    <button type="submit" class= "btn btn-success center submit-btn">Login</button>
    
     </form>
     <p class = "center">Don't have an account? Create one <a href="/register">here</a></p>

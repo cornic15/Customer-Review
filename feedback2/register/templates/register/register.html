@@ -150,6 +150,10 @@
 
 }
 
+.account-txt{
+position:relative; left:-18px; top:2px;
+}
+
 	</style>
 
 
@@ -170,8 +174,8 @@
 		<div class = "card">
 		<table class = "center table-login">{{ form.as_table }}</table>
 		<button type="submit" class= "btn btn-success center">Login</button>
-		<div class = "center">
-		<p>Already have an account? Login in <a href="/login">here</a></p>
+		<div class = "center account-txt">
+		<p class = "account-txt">Already have an account? Login in <a href="/login">here</a></p>
 		</form>
 	
 	</div>
