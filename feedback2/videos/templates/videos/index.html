@@ -145,6 +145,31 @@ a {
     width:50%;
 }
 
+.explanation{
+    background-color: white
+}
+
+
+.container-img {
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 85%;
+  left: 150px;
+  color: black;
+}
+
+.explanation-txt{
+    display: inline-block;
+    text-align: center;
+}
+
 </style>
 
 
@@ -156,7 +181,24 @@ a {
         <a href="/register">Register</a>
       </div>
     </head>
-    <div class="col-10 mx-auto mt-5 text-center">
+    <div class="col-10 mx-auto text-center explanation">
+        <h1>QR-Customer: Increasing Customer Feedback </h1>
+        <p class="explanation-txt">
+            Enable customers to give critical feedback with just a scan of a QR code. 
+            Create a custom survey, customer scans QR code on the bottom of the receipt, takes survey, 
+            businesses find critical insights and increase customer satisfaction and retention. 
+        </p>
+        <div class="container-img">
+       
+            {% load static %} <img src="{% static "Cover1.jpg" %}" width="1052.77" height="400"alt="home" />
+           
+         
+     
+    
+            <div class="bottom-left">
+                <a class="btn btn-success" href="/register">Get Started Today</a>
+            </div>
+  
     <div class="d-flex flex-wrap form">
         {% for item in videos %}
 
@@ -242,10 +284,8 @@ a {
         <h1>Increase Customer Feedback With QR-Customer</h1>
         <a class="btn btn-success" href="/register">Get Started Today</a>
     </div>
-    <div class = "intro">
-       
-       
-        <img src="{% static '/video/images/Cover.jpg' %}"/>
+    
+  </div>
     </div>
     </div>
 {% endblock %}
