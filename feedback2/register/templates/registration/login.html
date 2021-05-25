@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #e0ffff  !important;
+		}
+    	#form-group {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-top: auto;
+ 
+}
+
+.card{
+	background: #f1f1f1;
+    color: #434343;
+	max-width: 80%;
+	height: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+	margin-top: 5%;
+}
+
+
+.table-login{
+	margin-top: 2%;
+
+}
+
+
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color:#004343;
+    height:38px;
+    font-size: large;
+
+  
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+   
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+
+}
+
+#nav li a {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+
+}
+
+#nav a {
+  color: #ccffff;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+
+.submit-btn{
+  position: relative;
+  left: 30px;
+
+}
+
+</style>
+<div id = "nav">
+  <a href="{% url 'index' %}">Home</a>
+  <a class="active" href="#Login">Login</a>
+
+  <a href="/register">Register</a>
+</div>
+
+<form method="post" class="form-group">
+    {% csrf_token %}
+    <div class = "card">
+    <table class = "center table-login">{{ form.as_table }}</table>
+    <button type="submit" class= "btn btn-success center submit-btn">Login</button>
+   
+    </form>
+    <p class = "center">Don't have an account? Create one <a href="/register">here</a></p>
+ 
+</div>
+    {% endblock %}

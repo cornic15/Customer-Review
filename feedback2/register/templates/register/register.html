@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #e0ffff  !important;
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #74cfbf;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;
+		}
+		.login_btn {
+			width: 100%;
+			background: #33ccff !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #f7ba5b !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+		#form-group {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-top: auto;
+ 
+
+}
+
+.login {
+    margin:0 auto;
+    display:block;
+	margin-top: 2%;
+}
+	
+
+.card{
+	background: #f1f1f1;
+    color: #434343;
+	max-width: 1000px;
+	height: 75%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+	margin-top: 5%;
+}
+.table-login{
+	margin-top: 2%;
+}
+
+.btn-center{
+	padding: 12px 20px;
+  margin: 8px 0;
+}
+
+
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color:#004343;
+    height:38px;
+    font-size: large;
+
+  
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+   
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+
+}
+
+#nav li a {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+
+}
+
+#nav a {
+  color: #ccffff;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+
+.account-txt{
+position:relative; left:-18px; top:2px;
+}
+
+	</style>
+
+
+		
+
+
+	<div id = "nav">
+		<a href="{% url 'index' %}">Home</a>
+		<a  href="/login">Login</a>
+		<a class="active" href="#Register">Register</a>
+      </div>
+
+
+
+	<form method="post" class="form-group">
+		{% csrf_token %}
+	
+		<div class = "card">
+		<table class = "center table-login">{{ form.as_table }}</table>
+		<button type="submit" class= "btn btn-success center">Login</button>
+		<div class = "center account-txt">
+		<p class = "account-txt">Already have an account? Login in <a href="/login">here</a></p>
+		</form>
+	
+	</div>
+	</div>
+		{% endblock %}
+	

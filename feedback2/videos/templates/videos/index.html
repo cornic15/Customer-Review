@@ -1,0 +1,291 @@
+{% extends 'base.html' %} 
+{% load embed_video_tags %}
+{% load static %}
+
+{% block content %} 
+
+
+
+<style>
+/* Add a black background color to the top navigation */
+body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+            width: 100%;
+			background: #e0ffff !important;
+		}
+        .center {
+            display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color:#004343;
+    height:38px;
+    font-size: large;
+
+  
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+   
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+
+}
+
+#nav li a {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+
+}
+
+a {
+  color: #ccffff;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.testimonials{
+    padding: 40px 0;
+    background: #f1f1f1;
+    color: #434343;
+    text-align: center;
+
+
+}
+
+.form{
+    padding: 40px 0;
+    background:#dcdcdc;
+    color: #434343;
+    text-align: center;
+
+}
+
+
+.inner{
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.border{
+    width: 160px;
+    height: 5px;
+    background: #6ab04c;
+    margin: 26px auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col{
+    flex: 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+}
+
+.testimonial{
+    background: #fff;
+    padding: 30px;
+}
+.name{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.sign-up{
+    background-color: #ffe0e0;
+   
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    color:black;
+    padding: 40px 0;
+    font-family: 'Copperplate','Courier New', Courier, monospace;
+
+
+}
+
+.sign-up-btn{
+    width:50%;
+}
+
+.explanation{
+    background-color: white
+}
+
+
+.container-img {
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 85%;
+  left: 150px;
+  color: black;
+}
+
+.explanation-txt{
+    display: inline-block;
+    text-align: center;
+}
+
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'static/style.css' %}">
+<head>
+    <div id = "nav">
+        <a class="active" href="#home">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      </div>
+    </head>
+    <div class="col-10 mx-auto text-center explanation">
+        <h1>QR-Customer: Increasing Customer Feedback </h1>
+        <p class="explanation-txt">
+            Enable customers to give critical feedback with just a scan of a QR code. 
+            Create a custom survey, customer scans QR code on the bottom of the receipt, takes survey, 
+            businesses find critical insights and increase customer satisfaction and retention. 
+        </p>
+        <div class="container-img">
+       
+            {% load static %} <img src="{% static "Cover1.jpg" %}" width="1052.77" height="400"alt="home" />
+           
+         
+     
+    
+            <div class="bottom-left">
+                <a class="btn btn-success" href="/register">Get Started Today</a>
+            </div>
+  
+    <div class="d-flex flex-wrap form">
+        {% for item in videos %}
+
+            <div class="center">
+                {% video item.url '560x340' %}
+                <div class="d-flex justify-content-start">
+               
+                </div>
+            </div>
+            
+        {% endfor %}
+    </div>
+
+    <div class="testimonials">
+        <div class="inner">
+            <h1>Testimonials</h1>
+            <div class="border"></div>
+            <div class="row">
+               <div class="col">
+                    <div class="testimonial">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+
+                <div class="col">
+                    <div class="testimonial">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+
+                <div class="col">
+                    <div class="testimonial">
+                        <div class="name">Full name</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis earum ullam vero possimus! Assumenda accusamus distinctio quidem aliquam, voluptatibus totam, deleniti, omnis soluta esse ratione itaque necessitatibus sequi tenetur ut?
+                        </p>
+
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="form">
+        <h1>Contact Us</h1>
+    <form>
+        First Name:<br>
+        <input type="text" name="firstname">
+        <br>
+        Last Name:<br>
+        <input type="text" name="lastname">
+        <br>
+        Company Name:<br>
+        <input type="text" name="companyname">
+        <br>
+        Company Email:<br>
+        <input type="text" name="companyemail">
+        <br>
+        <br>
+        <h5 >Message:</h5>
+
+<textarea id="message" name="message"
+          rows="10" cols="50">
+
+</textarea>
+
+        <br>
+        <a class="btn btn-success" >Submit</a>
+      </form>
+       </div>
+
+     
+    <div class = "sign-up">
+        <h1>Increase Customer Feedback With QR-Customer</h1>
+        <a class="btn btn-success" href="/register">Get Started Today</a>
+    </div>
+    
+  </div>
+    </div>
+    </div>
+{% endblock %}

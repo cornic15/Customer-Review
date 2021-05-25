@@ -1,0 +1,146 @@
+
+
+
+
+{% extends 'base.html' %} 
+
+{% load embed_video_tags %}
+{% load static %}
+
+{% block content %} 
+
+<style>
+
+
+html, body {
+    width: 100%;
+    background-color: #e0ffff;
+}
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+      margin-left: auto;
+  margin-right: auto;
+
+margin-top: 5%;
+ 
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:nth-child(odd){background-color: white;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #e0ffe0;
+      
+    }
+    .review{
+        
+        background-color:#e0ffe0;
+        width: 40%;
+        margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+    }
+
+    
+#nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color:#004343;
+    height:38px;
+    font-size: large;
+
+  
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0px;
+   
+    width: 100%;
+}
+
+#nav li {
+    margin: 0px;
+
+}
+
+#nav li a {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #434343;
+    float: left;
+
+}
+
+#nav a {
+  color: #ccffff;
+}
+#nav li a:hover {
+    color: #FFFFFF;
+    background-color: #35af3b;
+
+
+}
+    </style>
+    <div id = "nav">
+      <a href="{% url 'index' %}">Home</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </div>
+    
+<table id="customers">
+    <tr>
+      <th>How was your experience in the store?</th>
+      <th>Did you find our staff helpful and courteous?</th>
+      <th>Were you served promptly?</th>
+      <th>Are our products/services priced appropriately?</th>
+      <th>Would you  recommend this business to a friend?</th>
+      <th>Tell us about your experience </th>
+    </tr>
+{%for post in object_list%}
+<div class= 'post-entry'>
+   
+
+            <tr>
+                <td>  {{post.rating}}</td>
+                <td>     {{post.staff}}</td>
+             
+              
+                <td>     {{post.prompt_service}}</td>
+
+                <td>  {{post.price}}</td>
+                <td>     {{post.recommend}}</td>
+                <td>     {{post.text_review}}</td>
+              </tr>
+
+    
+            
+          
+{%endfor%}
+</div>    
+</table>
+<div class = "review">
+    <h2>Response Percentage: 78%</h2>
+</div>
+<div class="col text-center" style="margin-top: 20px;">
+<a class="btn btn-success center" href="/logout">Log Out</a>
+</div>
+{%endblock content%}
